@@ -11,6 +11,8 @@
 3. Примените миграции: docker compose exec web python manage.py migrate
 4. Создайте суперпользователя: docker compose exec web python manage.py createsuperuser
 5. Откройте http://localhost:8000/
+6.          http://127.0.0.1:8000/
+
 
 ### Локально без Docker
 

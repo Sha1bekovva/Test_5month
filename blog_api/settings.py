@@ -14,7 +14,6 @@ DEBUG = os.getenv('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    # стандартные
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +67,7 @@ DATABASES = {
 
 
 
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -88,3 +88,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print("DB_HOST:", os.getenv('DB_HOST'))
+print("DB_USER:", os.getenv('DB_USER'))
+print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
