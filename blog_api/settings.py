@@ -20,13 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # сторонние
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
-
-    # свои
     'blog',
 ]
 
@@ -62,13 +58,14 @@ WSGI_APPLICATION = 'blog_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'blog_db'),
-        'USER': os.getenv('DB_USER', 'blog_user'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'blog_pass'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),  # по умолчанию localhost
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': 'blog_db',
+        'USER': 'blog_user',
+        'PASSWORD': 'blog_password',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
