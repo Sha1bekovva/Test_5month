@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()  # Загружаем .env
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,17 +55,17 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blog_api.wsgi.application'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog_db',
-        'USER': 'blog_user',
-        'PASSWORD': 'blog_password',
-        'HOST': 'db',
-        'PORT': '5432',
+        'NAME': os.getenv('DB_NAME', 'blog_db'),
+        'USER': os.getenv('DB_USER', 'blog_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'blog_pass'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
+
 
 
 REST_FRAMEWORK = {
